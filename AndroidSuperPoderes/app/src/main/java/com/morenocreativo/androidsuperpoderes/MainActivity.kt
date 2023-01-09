@@ -9,6 +9,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import com.morenocreativo.androidsuperpoderes.ui.theme.AndroidSuperPoderesTheme
 
@@ -34,10 +35,19 @@ fun Greeting(name: String) {
     Text(text = "Hello $name!")
 }
 
-@Preview(showBackground = true)
+@Preview(showSystemUi = true, device = Devices.NEXUS_6)
 @Composable
-fun DefaultPreview() {
+fun DefaultPreviewNEXUS_6() {
     AndroidSuperPoderesTheme {
         Greeting("Android")
     }
 }
+
+@Preview(name = "Nexus 10", showSystemUi = true, device = Devices.NEXUS_10)
+@Composable
+fun DefaultPreviewNEXUS_10() {
+    AndroidSuperPoderesTheme {
+        Greeting("Android")
+    }
+}
+
